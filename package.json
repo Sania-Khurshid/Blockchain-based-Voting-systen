@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm run compile-contracts && browserify src/js/app.js -o src/dist/app.bundle.js && browserify src/js/login.js -o src/dist/login.bundle.js",
+    "compile-contracts": "truffle compile || echo 'Warning: Contract compilation failed. Make sure Ganache is running and internet connection is available.'",
+    "start": "node index.js",
+    "dev": "npm run build && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
